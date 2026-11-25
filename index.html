@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khalied Gamiel | Graphic Designer</title>
+<meta name="description" content="Khalied Gamiel, graphic designer. Brand identity, key visuals, Arabic typography and social media design.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f2ee;--fg:#12141b;--mute:#626878;--line:#d9d6cf;--acc:#2f4bff;--card:#e8e5df;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1017;--fg:#f2f0ea;--mute:#9a9fae;--line:#262b37;--acc:#8396ff;--card:#171b25;--on:#0d1017}}
+:root[data-theme="dark"]{--bg:#0d1017;--fg:#f2f0ea;--mute:#9a9fae;--line:#262b37;--acc:#8396ff;--card:#171b25;--on:#0d1017}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.65 "Bricolage Grotesque","Cairo",system-ui,sans-serif;overflow-x:hidden}
+[dir=rtl] body,[dir=rtl] button,[dir=rtl] input,[dir=rtl] textarea{font-family:"Cairo","Bricolage Grotesque",sans-serif}
+a{color:inherit}button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:19}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-weight:800;text-decoration:none;font-size:19px}
+nav{display:flex;gap:24px;font-size:15px}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--fg)}
+.tools{display:flex;gap:8px}
+.tools button{border:1px solid var(--line);background:none;border-radius:999px;padding:6px 14px;cursor:pointer;font-size:14px}
+.tools button:hover{border-color:var(--fg)}
+.hero{padding:8vh 0 6vh;position:relative}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--mute)}
+.badge i{width:8px;height:8px;border-radius:50%;background:#2fbf71}
+.hero h1{margin:22px 0 0;font-weight:800;font-size:clamp(52px,13vw,190px);line-height:.95;letter-spacing:-.04em}
+[dir=rtl] .hero h1{font-weight:900;letter-spacing:0;line-height:1.15}
+.hero p{max-width:52ch;font-size:clamp(18px,2vw,22px);color:var(--mute);margin:26px 0 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;border:1.5px solid var(--fg);text-decoration:none;font-weight:700;font-size:15px;background:none;cursor:pointer}
+.btn.p{background:var(--fg);color:var(--bg)}
+.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.marq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
+.marq div{display:inline-block;animation:mq 30s linear infinite;font-size:clamp(22px,3.5vw,40px);font-weight:800;letter-spacing:-.02em}
+.marq span{margin:0 28px;color:var(--mute)}.marq b{color:var(--acc)}
+@keyframes mq{to{transform:translateX(-50%)}}
+[dir=rtl] .marq div{animation-direction:reverse}
+section{padding:80px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(30px,4.5vw,56px);letter-spacing:-.03em;margin:0 0 14px;line-height:1.1}
+[dir=rtl] h2{letter-spacing:0}
+.sub{color:var(--mute);max-width:56ch;margin:0 0 36px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{border:1px solid var(--line);background:none;border-radius:999px;padding:8px 18px;cursor:pointer;font-size:15px}
+.filters button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.work{text-align:inherit;background:none;border:0;padding:0;cursor:pointer;display:block;width:100%}
+.work[hidden]{display:none}
+.cover{aspect-ratio:4/3;border-radius:8px;display:grid;place-items:center;font-weight:900;font-size:clamp(90px,12vw,150px);color:rgba(255,255,255,.92);line-height:1;transition:transform .25s;overflow:hidden;font-family:"Cairo",sans-serif}
+.work:hover .cover{transform:translateY(-5px)}
+.work h3{margin:14px 0 2px;font-size:20px}
+.work span{color:var(--mute);font-size:14px}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;border:1px solid var(--line);border-radius:8px}
+.svc>div{padding:30px;border-inline-end:1px solid var(--line)}
+.svc>div:last-child{border-inline-end:0}
+.svc h3{margin:0 0 10px;font-size:22px}.svc p{margin:0;color:var(--mute);font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;counter-reset:s}
+.steps div{counter-increment:s;border-top:2px solid var(--fg);padding-top:16px}
+.steps div::before{content:counter(s);font-weight:800;font-size:40px;color:var(--acc);display:block;line-height:1}
+.steps h3{margin:10px 0 6px}.steps p{margin:0;color:var(--mute);font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-bottom:56px}
+.stats b{display:block;font-size:clamp(44px,6vw,76px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stats span{color:var(--mute)}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
+.about p{margin:0 0 16px;max-width:60ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags li{list-style:none;border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:15px}
+ul.tags{padding:0;margin:0}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+blockquote{margin:0;background:var(--card);border-radius:8px;padding:28px}
+blockquote p{margin:0 0 16px;font-size:19px}blockquote cite{font-style:normal;color:var(--mute);font-size:15px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+form{display:grid;gap:14px}
+label{font-size:14px;color:var(--mute);display:grid;gap:6px}
+input,textarea{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%}
+textarea{min-height:130px;resize:vertical}
+.links a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700;font-size:20px}
+.links a:hover{color:var(--acc)}
+.toast{color:var(--acc);font-size:15px;min-height:1.5em}
+footer{padding:30px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+dialog{border:0;border-radius:12px;padding:0;max-width:760px;width:calc(100% - 32px);background:var(--bg);color:var(--fg)}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+dialog .cover{border-radius:0;aspect-ratio:16/9}
+.dbody{padding:26px}
+.dbody h3{margin:0 0 8px;font-size:28px}.dbody p{color:var(--mute)}
+.meta{display:flex;gap:28px;flex-wrap:wrap;margin:16px 0;font-size:15px}
+.meta small{display:block;color:var(--mute)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}.add[hidden]{display:none}.pf{padding:26px;display:grid;gap:14px}select{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%}
+.x{position:absolute;top:12px;inset-inline-end:12px;background:var(--bg);border:0;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:18px}
+@media (max-width:820px){nav{display:none}.about,.contact{grid-template-columns:1fr;gap:36px}.svc>div{border-inline-end:0;border-bottom:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top" data-t="logo">Khalied Gamiel</a>
+<nav aria-label="Main"><a href="#work" data-t="n1">Work</a><a href="#services" data-t="n2">Services</a><a href="#about" data-t="n3">About</a><a href="#contact" data-t="n4">Contact</a></nav>
+<div class="tools"><button id="th" aria-label="Toggle theme">◐</button><button id="lg">عربي</button></div>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<span class="badge"><i></i><span data-t="avail">Available for new projects</span></span>
+<h1 data-t="name">Khalied Gamiel</h1>
+<p data-t="intro">Graphic designer building brand identities, key visuals and Arabic typography that make companies easy to remember.</p>
+<div class="btns"><a class="btn p" href="#work" data-t="cta1">See my work</a><a class="btn" href="#contact" data-t="cta2">Start a project</a></div>
+</div>
+<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="work"><div class="wrap">
+<h2 data-t="wt">Selected work</h2>
+<p class="sub" data-t="ws">Tap any project for details. Full case studies live on Behance.</p>
+<div class="filters" id="fl" role="group"></div>
+<div class="grid" id="gr"></div>
+<div class="btns"><a class="btn" href="https://www.behance.net/khaliedgamiel" target="_blank" rel="noopener" data-t="wb">View all on Behance</a></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+<h2 data-t="st">What I do</h2>
+<p class="sub" data-t="ss">Four services, one consistent visual language across all of them.</p>
+<div class="svc" id="sv"></div>
+</div></section>
+
+<section id="process"><div class="wrap">
+<h2 data-t="pt">How a project runs</h2>
+<p class="sub" data-t="ps">Clear steps, so you always know what comes next.</p>
+<div class="steps" id="pr"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<div class="stats" id="stt"></div>
+<div class="about">
+<div><h2 data-t="at">About</h2><p data-t="a1">I’m Khalied, a graphic designer who turns a brief into a clear visual identity. I work with startups, agencies and local brands, and I care about type, structure and details that hold up in real use.</p><p data-t="a2">Replace this text with your own story, the markets you work in and the clients you want.</p></div>
+<div><h2 data-t="tt">Tools</h2><ul class="tags"><li>Illustrator</li><li>Photoshop</li><li>InDesign</li><li>Figma</li><li>After Effects</li><li>Procreate</li></ul></div>
+</div>
+</div></section>
+
+<section id="voices"><div class="wrap">
+<h2 data-t="qt">Client words</h2><p class="sub" data-t="qs">Replace with real feedback from your clients.</p>
+<div class="quotes" id="qs"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="contact">
+<div><h2 data-t="ct">Let’s work together</h2><p class="sub" data-t="cs">Tell me about your project. I reply within two working days.</p>
+<div class="links"><a href="mailto:hello@example.com">hello@example.com</a><a href="https://www.behance.net/khaliedgamiel" target="_blank" rel="noopener">Behance</a><a href="https://wa.me/200000000000" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></div></div>
+<form id="fm">
+<label><span data-t="f1">Name</span><input name="n" required></label>
+<label><span data-t="f2">Email</span><input name="e" type="email" required></label>
+<label><span data-t="f3">Project details</span><textarea name="m" required></textarea></label>
+<button class="btn p" type="submit" data-t="f4">Send message</button>
+<div class="toast" id="ts" role="status"></div>
+</form>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Khalied Gamiel</span><a href="#top" data-t="up">Back to top</a></div></footer>
+
+<dialog id="dg"><button class="x" id="dx" aria-label="Close">✕</button><div id="dc"></div></dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+var T={en:{n1:"Work",n2:"Services",n3:"About",n4:"Contact",avail:"Available for new projects",name:"Khalied Gamiel",intro:"Graphic designer building brand identities, key visuals and Arabic typography that make companies easy to remember.",cta1:"See my work",cta2:"Start a project",wt:"Selected work",ws:"Tap any project for details. Full case studies live on Behance.",wb:"View all on Behance",st:"What I do",ss:"Four services, one consistent visual language across all of them.",pt:"How a project runs",ps:"Clear steps, so you always know what comes next.",at:"About",tt:"Tools",qt:"Client words",qs:"Replace with real feedback from your clients.",ct:"Let’s work together",cs:"Tell me about your project. I reply within two working days.",f1:"Name",f2:"Email",f3:"Project details",f4:"Send message",addp:"Add project",pn1:"Title (English)",pn2:"Title (Arabic)",pn3:"Category",pn4:"Year",pn5:"Description",pn6:"Cover image",pn7:"Upload and publish",del:"Delete project",busy:"Uploading…",err:"Something failed. Try a smaller image.",up:"Back to top",all:"All",open:"Open on Behance",ok:"Opening your email app…",
+a1:"I’m Khalied, a graphic designer who turns a brief into a clear visual identity. I work with startups, agencies and local brands, and I care about type, structure and details that hold up in real use.",a2:"Replace this text with your own story, the markets you work in and the clients you want.",
+cats:{b:"Branding",k:"Key visuals",t:"Typography",s:"Social media"},
+svc:[["Brand identity","Logo, colors, type and guidelines that work from a business card to a billboard."],["Key visuals","Campaign imagery that carries one clear idea across print and digital."],["Arabic typography","Custom lettering and bilingual layouts with correct Arabic rhythm."],["Social media design","Templates and post systems your team can reuse every week."]],
+pr:[["Brief","We agree on goals, audience and deadline."],["Concept","I present two or three directions with rationale."],["Design","The chosen direction is built out and refined."],["Delivery","You get organized files and usage guidelines."]],
+st:[["50+","Projects delivered"],["5","Years of experience"],["30+","Happy clients"]],
+q:[["Khalied understood the brand in one meeting and delivered a system we still use.","Client name, Company"],["Fast, organized and great with Arabic type.","Client name, Agency"]],
+pj:{d:"Short description of the project, the problem it solved and the result. Edit this text.",c:"Client",y:"Year",r:"Role"}},
+ar:{n1:"الأعمال",n2:"الخدمات",n3:"نبذة",n4:"تواصل",avail:"متاح لمشاريع جديدة",name:"خالد جميل",intro:"مصمم جرافيك بصنع هويات بصرية وكي فيجوال وتايبوجرافي عربي بيخلّي أي براند سهل يتحفظ.",cta1:"شوف أعمالي",cta2:"ابدأ مشروع",wt:"أعمال مختارة",ws:"اضغط على أي مشروع لتشوف التفاصيل. دراسات الحالة الكاملة على بيهانس.",wb:"كل الأعمال على بيهانس",st:"إيه اللي بعمله",ss:"أربع خدمات بلغة بصرية واحدة متسقة.",pt:"إزاي المشروع بيمشي",ps:"خطوات واضحة، تعرف دايمًا الجاي إيه.",at:"نبذة",tt:"الأدوات",qt:"آراء العملاء",qs:"استبدلها بآراء عملائك الحقيقية.",ct:"خلينا نشتغل سوا",cs:"احكيلي عن مشروعك. برد في خلال يومين عمل.",f1:"الاسم",f2:"الإيميل",f3:"تفاصيل المشروع",f4:"ابعت الرسالة",addp:"أضف مشروع",pn1:"العنوان (إنجليزي)",pn2:"العنوان (عربي)",pn3:"التصنيف",pn4:"السنة",pn5:"الوصف",pn6:"صورة الغلاف",pn7:"ارفع وانشر",del:"احذف المشروع",busy:"بيرفع…",err:"حصلت مشكلة. جرّب صورة أصغر.",up:"لأعلى",all:"الكل",open:"افتح على بيهانس",ok:"بيفتح تطبيق الإيميل…",
+a1:"أنا خالد، مصمم جرافيك بحوّل أي بريف لهوية بصرية واضحة. اشتغلت مع شركات ناشئة ووكالات وبراندات محلية، وبهتم بالخط والتنظيم والتفاصيل اللي بتصمد في الاستخدام الفعلي.",a2:"استبدل النص ده بقصتك والأسواق اللي بتشتغل فيها والعملاء اللي عايزهم.",
+cats:{b:"هوية بصرية",k:"كي فيجوال",t:"تايبوجرافي",s:"سوشيال ميديا"},
+svc:[["الهوية البصرية","لوجو وألوان وخطوط ودليل استخدام يشتغل من الكارت لحد اللوحة الإعلانية."],["الكي فيجوال","صور حملات بتوصّل فكرة واحدة واضحة على المطبوع والديجيتال."],["التايبوجرافي العربي","لوجو وخط يدوي وتصميمات ثنائية اللغة بإيقاع عربي سليم."],["تصميم السوشيال","قوالب وأنظمة بوستات فريقك يستخدمها كل أسبوع."]],
+pr:[["البريف","نتفق على الهدف والجمهور والموعد."],["الكونسبت","بعرض عليك ٢–٣ اتجاهات مع التبرير."],["التصميم","الاتجاه المختار بيتنفذ ويتظبط."],["التسليم","بتستلم ملفات منظمة ودليل استخدام."]],
+st:[["+٥٠","مشروع منفّذ"],["٥","سنين خبرة"],["+٣٠","عميل سعيد"]],
+q:[["خالد فهم البراند من أول اجتماع وسلّمنا نظام لسه بنستخدمه.","اسم العميل، الشركة"],["سريع ومنظم وممتاز في الخط العربي.","اسم العميل، الوكالة"]],
+pj:{d:"وصف قصير للمشروع والمشكلة اللي حلّها والنتيجة. عدّل النص ده.",c:"العميل",y:"السنة",r:"الدور"}}};
+var B=[["Aurora Brand","أورورا","b","A","#2f4bff,#8a5cff","2025"],["Nile Motors","نايل موتورز","k","ن","#ff5a3d,#ffb23d","2025"],["Hurouf Lettering","حروف","t","ح","#0aa37f,#7be0b8","2024"],["Zahra Café","زهرة كافيه","b","Z","#d6336c,#ffa8c5","2024"],["Summer Campaign","حملة الصيف","k","S","#00a6d6,#6ee7ff","2024"],["Kalima Posters","بوسترات كلمة","t","ك","#7048e8,#b197fc","2023"],["Orbit Social Kit","أوربت","s","O","#1c1f2b,#4b57d6","2023"],["Baraka Foods","بركة","b","ب","#e67700,#ffd43b","2023"]];
+var P=B,U=[],own=false,AS=null,DB=null;function esc(x){return String(x==null?"":x).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function cv(p){return p[6]?'<div class="cover"><img alt="" src="'+esc(p[6])+'"></div>':'<div class="cover" style="background:linear-gradient(135deg,'+p[4]+')">'+p[3]+"</div>"}
+function nm(p){return esc(L==="ar"&&p[1]?p[1]:p[0])}
+var L="en",R=document.documentElement,$=function(i){return document.getElementById(i)},cur="all";
+function g(){return T[L]}
+function render(){var t=g();R.lang=L;R.dir=L==="ar"?"rtl":"ltr";$("lg").textContent=L==="ar"?"EN":"عربي";
+document.querySelectorAll("[data-t]").forEach(function(e){if(t[e.dataset.t])e.textContent=t[e.dataset.t]});
+var m=["Brand identity","Key visuals","Arabic typography","Social media","Lettering","Posters"];if(L==="ar")m=["هوية بصرية","كي فيجوال","تايبوجرافي عربي","سوشيال ميديا","خط يدوي","بوسترات"];
+var h=m.map(function(x){return"<span>"+x+"</span><b>✦</b>"}).join("");$("mq").innerHTML=h+h+h+h;
+var fl="<button data-f=all aria-pressed="+(cur==="all")+">"+t.all+"</button>";for(var k in t.cats)fl+="<button data-f="+k+" aria-pressed="+(cur===k)+">"+t.cats[k]+"</button>";$("fl").innerHTML=fl;
+$("gr").innerHTML=P.map(function(p,i){return'<button class="work" data-i="'+i+'"'+(cur!=="all"&&p[2]!==cur?" hidden":"")+">"+cv(p)+"<h3>"+nm(p)+"</h3><span>"+t.cats[p[2]]+"</span></button>"}).join("");
+var sc="";for(var k2 in t.cats)sc+='<option value="'+k2+'">'+t.cats[k2]+"</option>";$("sc").innerHTML=sc;
+$("sv").innerHTML=t.svc.map(function(s){return"<div><h3>"+s[0]+"</h3><p>"+s[1]+"</p></div>"}).join("");
+$("pr").innerHTML=t.pr.map(function(s){return"<div><h3>"+s[0]+"</h3><p>"+s[1]+"</p></div>"}).join("");
+$("stt").innerHTML=t.st.map(function(s){return"<div><b>"+s[0]+"</b><span>"+s[1]+"</span></div>"}).join("");
+$("qs").innerHTML=t.q.map(function(s){return"<blockquote><p>"+s[0]+"</p><cite>"+s[1]+"</cite></blockquote>"}).join("")}
+document.addEventListener("click",function(e){var f=e.target.closest("[data-f]"),w=e.target.closest(".work");
+if(f){cur=f.dataset.f;render()}
+if(w){var p=P[w.dataset.i],t=g();$("dc").innerHTML=cv(p)+'<div class="dbody"><h3>'+nm(p)+"</h3><span>"+t.cats[p[2]]+"</span><p>"+esc(p[8]||t.pj.d)+'</p><div class="meta"><div><small>'+t.pj.y+"</small>"+esc(p[5])+'</div></div><div class="btns"><a class="btn p" target="_blank" rel="noopener" href="https://www.behance.net/khaliedgamiel">'+t.open+"</a>"+"</div></div>";$("dg").showModal()}
+});
+$("dx").onclick=function(){$("dg").close()};
+$("dg").addEventListener("click",function(e){if(e.target===this)this.close()});
+$("lg").onclick=function(){L=L==="en"?"ar":"en";render();try{localStorage.setItem("kg-l",L)}catch(x){}};
+$("th").onclick=function(){var d=(R.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))==="dark";R.dataset.theme=d?"light":"dark";try{localStorage.setItem("kg-t",R.dataset.theme)}catch(x){}};
+$("fm").onsubmit=function(e){e.preventDefault();var f=e.target;$("ts").textContent=g().ok;location.href="mailto:"+(C.email||"hello@example.com")+"?subject="+encodeURIComponent("Project inquiry from "+f.n.value)+"&body="+encodeURIComponent(f.m.value+"\n\n"+f.n.value+" ("+f.e.value+")")};
+try{L=localStorage.getItem("kg-l")||"en";var s=localStorage.getItem("kg-t");if(s)R.dataset.theme=s}catch(x){}
+var C=window.SITE||{};
+(function(){var ls=document.querySelectorAll(".links a");
+if(C.email){ls[0].href="mailto:"+C.email;ls[0].textContent=C.email}
+if(C.behance)ls[1].href=C.behance;
+if(C.whatsapp)ls[2].href="https://wa.me/"+C.whatsapp;else ls[2].remove();
+if(C.instagram)ls[3]&&(ls[3].href=C.instagram);else ls[3]&&ls[3].remove()})();
+if(C.url&&C.key&&window.supabase){window.supabase.createClient(C.url,C.key).from("projects").select("*").order("created_at",{ascending:false}).then(function(r){
+if(r.data&&r.data.length){P=r.data.map(function(x){return[x.title,x.title_ar,x.category,"","",x.year,x.image_url,x.id,x.description]});render()}})}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة التحكم</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f2ee;--fg:#12141b;--mute:#626878;--line:#d9d6cf;--acc:#2f4bff;--card:#e8e5df}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1017;--fg:#f2f0ea;--mute:#9a9fae;--line:#262b37;--acc:#8396ff;--card:#171b25}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 Cairo,system-ui,sans-serif}
+.w{max-width:760px;margin:0 auto;padding:32px 20px}h1{font-size:30px;margin:0 0 20px}h2{font-size:22px;margin:36px 0 12px}
+form{display:grid;gap:14px}label{display:grid;gap:6px;font-size:15px;color:var(--mute)}
+input,textarea,select{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;width:100%}
+textarea{min-height:100px}
+button{font:inherit;font-weight:700;border-radius:999px;padding:12px 24px;cursor:pointer;border:1.5px solid var(--fg);background:none;color:var(--fg)}
+button.p{background:var(--fg);color:var(--bg)}
+.row{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.row img{width:84px;height:62px;object-fit:cover;border-radius:6px;background:var(--card)}.row span{flex:1}
+.top{display:flex;justify-content:space-between;align-items:center}
+#m{color:var(--acc);min-height:1.6em}[hidden]{display:none!important}
+</style></head>
+<body><div class="w">
+<div class="top"><h1>لوحة التحكم</h1><button id="out" hidden>خروج</button></div>
+<form id="lf"><label>الإيميل<input name="e" type="email" required autocomplete="username"></label>
+<label>الباسورد<input name="p" type="password" required autocomplete="current-password"></label>
+<button class="p">دخول</button></form>
+<div id="pn" hidden>
+<form id="af"><h2 style="margin-top:0">إضافة مشروع</h2>
+<label>العنوان (إنجليزي)<input name="t" required></label>
+<label>العنوان (عربي)<input name="ta"></label>
+<label>التصنيف<select name="c"><option value="b">هوية بصرية</option><option value="k">كي فيجوال</option><option value="t">تايبوجرافي</option><option value="s">سوشيال ميديا</option></select></label>
+<label>السنة<input name="y" value="2026"></label>
+<label>الوصف<textarea name="d"></textarea></label>
+<label>صورة الغلاف<input name="i" type="file" accept="image/*" required></label>
+<button class="p">ارفع وانشر</button></form>
+<h2>مشاريعك</h2><div id="ls"></div></div>
+<div id="m" role="status"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+var C=window.SITE||{},$=function(i){return document.getElementById(i)};
+function say(t){$("m").textContent=t||""}
+if(!C.url||!C.key){say("املا url و key في ملف config.js الأول.")}
+else{var sb=window.supabase.createClient(C.url,C.key);
+function show(on){$("lf").hidden=on;$("pn").hidden=!on;$("out").hidden=!on}
+function load(){sb.from("projects").select("*").order("created_at",{ascending:false}).then(function(r){var box=$("ls");box.textContent="";
+(r.data||[]).forEach(function(x){var d=document.createElement("div");d.className="row";var im=document.createElement("img");im.src=x.image_url;im.alt="";
+var sp=document.createElement("span");sp.textContent=(x.title_ar||x.title)+" ("+(x.year||"")+")";var b=document.createElement("button");b.textContent="حذف";
+b.onclick=function(){if(!confirm("تحذف المشروع ده؟"))return;(x.image_path?sb.storage.from("works").remove([x.image_path]):Promise.resolve()).then(function(){return sb.from("projects").delete().eq("id",x.id)}).then(load)};
+d.append(im,sp,b);box.append(d)});if(!(r.data||[]).length)box.textContent="لسه مفيش مشاريع."})}
+sb.auth.getSession().then(function(r){if(r.data.session){show(true);load()}});
+$("lf").onsubmit=function(e){e.preventDefault();var f=e.target;say("");sb.auth.signInWithPassword({email:f.e.value,password:f.p.value}).then(function(r){if(r.error)return say("الإيميل أو الباسورد غلط.");show(true);load()})};
+$("out").onclick=function(){sb.auth.signOut().then(function(){show(false)})};
+$("af").onsubmit=function(e){e.preventDefault();var f=e.target,file=f.i.files[0];if(!file)return;say("بيرفع…");
+var path=Date.now()+"-"+file.name.replace(/[^\w.-]/g,"_");
+sb.storage.from("works").upload(path,file,{contentType:file.type}).then(function(r){if(r.error)throw r.error;
+var url=sb.storage.from("works").getPublicUrl(path).data.publicUrl;
+return sb.from("projects").insert({title:f.t.value,title_ar:f.ta.value,category:f.c.value,year:f.y.value,description:f.d.value,image_url:url,image_path:path})}).then(function(r){if(r.error)throw r.error;f.reset();f.y.value="2026";say("اتنشر ✓");load()}).catch(function(x){say("حصلت مشكلة: "+(x.message||x))})}}
+</script></body></html>
